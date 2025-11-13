@@ -1,3 +1,85 @@
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides {
+    display: flex;
+    width: 300%; /* 3 imágenes */
+    transition: transform 1s ease;
+}
+
+.slide {
+    flex: 0 0 100%; /* Cada imagen ocupa 100% del ancho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;            /* Mostrará toda la imagen sin recortar */
+    max-height: 90vh;        /* Altura máxima relativa a la pantalla */
+    object-fit: contain;     /* La imagen completa será visible */
+    display: block;
+}
+
+/* ==== EFECTO DE TRANSICIÓN ==== */
+.slider:hover .slides {
+    transform: translateX(-100%);
+}
+
+/* ==== TEXTO CENTRAL ==== */
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f5f5f5;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.banner-text h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.banner-text p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+}
+
+.btn {
+    background-color: #1e4f6b;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2f6f90;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+    .slide img {
+    max-height: 60vh;
+    }
+
+    .banner-text h1 {
+    font-size: 1.8rem;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +91,10 @@ body {
     color: #f0f0f0;
     line-height: 1.6;
     background-color: #1e1e2f;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .container {
@@ -16,6 +102,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     color: #e0e0e0;
+    width: 100%;
 }
 
 .banner {
@@ -49,29 +136,36 @@ body {
     background-color: #2563eb;
 }
 
-.about, .mision-vision {
-    margin: 50px 0;
-}
-
-.about h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+.about {
+    margin: 50px auto;
     text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 15px;
     margin-top: 20px;
+    text-align: center;
 }
 
-.mision-vision {
+.mision-visioncontainer{
     display: flex;
-    gap: 50px;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;       
+    align-items: stretch;         
+    gap: 30px;                     
+    padding: 60px 10%;
+    background-color:#1e1e35 ;    
+    color: #1e4f6b;                
+    flex-wrap: wrap;  
 }
 
 .mision, .vision {
@@ -79,6 +173,10 @@ body {
     background-color: #2a2a3d;
     padding: 20px;
     border-radius: 15px;
+}
+
+.mision p, .vision p {
+    color: white !important;
 }
 
 .mision h3, .vision h3 {
@@ -95,4 +193,47 @@ footer {
     padding: 20px;
     flex-wrap: wrap;
     text-align: center;
+}
+
+.bloque {
+  flex: 1 1 300px;               /* Cada bloque ocupa al menos 300px */
+  background-color: #1e3a5f;     /* Azul oscuro */
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.bloque:hover {
+  transform: scale(1.05);
+}
+
+.bloque img {
+  width: 70px;
+  margin-bottom: 15px;
+}
+
+.bloque h2 {
+  font-size: 1.6rem;
+  color: #1e4f6b;
+  margin-bottom: 10px;
+}
+
+.bloque p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .mision-vision {
+    flex-direction: column;    /* Apila los bloques */
+    align-items: center;
+  }
+
+  .bloque {
+    max-width: 90%;
+  }
 }
