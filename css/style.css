@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f0f0f0;
+    line-height: 1.6;
+    background-color: #1e1e2f;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #e0e0e0;
+}
+
+.banner {
+    background: linear-gradient(rgba(30, 30, 47, 0.7), rgba(30, 30, 47, 0.7)),
+                url('../img/banner.jpg') center/cover no-repeat;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.banner p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+}
+
+.btn {
+    background-color: #3b82f6;
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2563eb;
+}
+
+.about, .mision-vision {
+    margin: 50px 0;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.mision-vision {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mision, .vision {
+    flex: 1 1 400px;
+    background-color: #2a2a3d;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.mision h3, .vision h3 {
+    margin-bottom: 10px;
+    color: #3b82f6;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #12121f;
+    color: #c0c0c0;
+    padding: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+}
