@@ -40,15 +40,14 @@
         </p>
         
         <div class="links">
-        <a href="adopta.html" class="btn">Adopta</a>
-        <a href="#" class="btn">Donaciones</a>
-        <a href="#" class="btn">Voluntariado</a>
-        <a href="contacto.html" class="btn">Contacto</a>
+            <a href="adopta.html" class="btn">Adopta</a>
+            <a href="#" class="btn">Donaciones</a>
+            <a href="#" class="btn">Voluntariado</a>
+            <a href="contacto.html" class="btn">Contacto</a>
         </div>
     </section>
 
     <section class="mision-visioncontainer">
-        
         <div class="mision">
             <img src="/imagenes/corazon.png" alt="icono mision" style="width: 70px; margin-bottom: 15px;">
             <h3>Misión</h3>
@@ -64,11 +63,38 @@
                 Ser una fundación reconocida por su compromiso con el bienestar animal, logrando un impacto positivo en la vida de los animales y fomentando la empatía y el respeto hacia ellos.
             </p>
         </div>
-
     </section>
 
     <footer>
         <p>© 2025 Fundación Patitas Felices | Contacto: info@patitasfelices.org | Desarrollado por Camilo Albarracín</p>
     </footer>
+    <script>
+        (function() {
+            const slides = ['#slide-1', '#slide-2', '#slide-3'];
+                const slideEls = document.querySelectorAll('.slides .slide');
+                if (!slideEls || slideEls.length === 0) return;
+
+                let idx = 0;
+                // inicializar: limpiar y activar la primera
+                slideEls.forEach(el => el.classList.remove('active'));
+                slideEls[0].classList.add('active');
+
+                function next() {
+                    slideEls[idx].classList.remove('active');
+                    idx = (idx + 1) % slideEls.length;
+                    slideEls[idx].classList.add('active');
+                }
+
+                // rotar cada 3 segundos
+                const interval = setInterval(next, 3000);
+
+                // Opcional: si el usuario entra en la pestaña inactiva, pausamos la rotación para ahorrar recursos
+                document.addEventListener('visibilitychange', function() {
+                    if (document.hidden) clearInterval(interval);
+                });
+            // Cambia cada 3 segundos (3000 ms)
+            setInterval(next, 3000);
+        })();
+    </script>
 </body>
 </html>

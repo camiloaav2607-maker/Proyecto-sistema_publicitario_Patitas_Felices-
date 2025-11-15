@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Fundación Patitas Felices</title>
+    <link rel="stylesheet" href="css/stylecontacto.css">
+</head>
+<body>
+    <!-- BANNER -->
+    <header class="banner-contacto">
+        <h1>Contacta con Nosotros</h1>
+        <p>¿Tienes alguna pregunta o sugerencia? ¡Nos encantaría escucharte!</p>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="contacto-container">
+        <!-- SECCIÓN DE INFORMACIÓN -->
+        <section class="info-contacto">
+            <h2>Información de Contacto</h2>
+            
+            <div class="info-item">
+                <h3>📍 Ubicación</h3>
+                <p>Calle Principal 123<br>Ciudad, País 12345</p>
+            </div>
+
+            <div class="info-item">
+                <h3>📞 Teléfono</h3>
+                <p>+57 300 123 4567</p>
+            </div>
+
+            <div class="info-item">
+                <h3>📧 Correo Electrónico</h3>
+                <p>info@patitasfelices.org</p>
+            </div>
+
+            <div class="info-item">
+                <h3>⏰ Horario de Atención</h3>
+                <p>Lunes a Viernes: 9:00 AM - 6:00 PM<br>
+                   Sábados: 10:00 AM - 4:00 PM<br>
+                   Domingos: Cerrado</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DEL FORMULARIO -->
+        <section class="formulario-contacto">
+            <h2>Envíanos un Mensaje</h2>
+            
+            <form id="formularioContacto" class="form-group">
+                <!-- NOMBRE Y APELLIDOS -->
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div class="form-input">
+                        <label for="apellidos">Apellidos *</label>
+                        <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required>
+                    </div>
+                </div>
+
+                <!-- EMAIL Y TELÉFONO -->
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="correo">Correo Electrónico *</label>
+                        <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
+                    </div>
+
+                    <div class="form-input">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+57 300 123 4567" required>
+                    </div>
+                </div>
+
+                <!-- CIUDAD -->
+                <div class="form-input">
+                    <label for="ciudad">Ciudad *</label>
+                    <input type="text" id="ciudad" name="ciudad" placeholder="Tu ciudad" required>
+                </div>
+
+                <!-- TIPO DE CONSULTA -->
+                <div class="form-input">
+                    <label for="tipoConsulta">Tipo de Consulta *</label>
+                    <select id="tipoConsulta" name="tipoConsulta" required>
+                        <option value="">-- Selecciona un tipo de consulta --</option>
+                        <option value="adopcion">Adopción de Mascota</option>
+                        <option value="donacion">Donación</option>
+                        <option value="voluntariado">Voluntariado</option>
+                        <option value="perdida">Mascota Pérdida</option>
+                        <option value="reporte">Reporte de Animal en Peligro</option>
+                        <option value="general">Consulta General</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <!-- MENSAJE -->
+                <div class="form-input">
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos tu consulta o sugerencia..." rows="6" required></textarea>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Fundación Patitas Felices | Contacto: info@patitasfelices.org | Desarrollado por Camilo Albarracín</p>
+    </footer>
+</body>
+</html>
