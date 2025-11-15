@@ -1,80 +1,6 @@
-/* --- ESTILOS DEL SLIDER CORREGIDOS --- */
-.slider {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 70vh; /* ¡ALTURA FIJA ARREGLADA! */
-}
+/* style.css */
 
-.slides {
-    position: relative; 
-    height: 100%;
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out; 
-}
-
-.slide img {
-    width: 100%;
-    height: 100%; /* Asegura que la imagen ocupe la altura del slide */
-    max-height: 70vh;
-    object-fit: contain;
-    display: block;
-}
-
-/* La primera imagen siempre se muestra al cargar */
-/* Mostrar slide activo mediante clase .active */
-.slides .slide {
-    opacity: 0;
-}
-
-.slide.active {
-    opacity: 1;
-    z-index: 1;
-}
-
-
-/* --- RESPONSIVE CORREGIDO --- */
-@media (max-width: 768px) {
-    .slider, .slide img {
-        height: 50vh; /* Asegura la altura en móvil */
-    }
-
-    /* Forzar Misión y Visión lado a lado en pantallas pequeñas */
-    .mision-visioncontainer {
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-        padding: 30px 5%;
-        align-items: stretch;
-        justify-content: center;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
-
-    .mision, .vision {
-        flex: 1 1 50%;
-        min-width: 180px;
-        min-height: 180px;
-    }
-    
-    .banner {
-        padding: 80px 10px;
-    }
-    
-    .banner h1 {
-        font-size: 2rem;
-    }
-}
-
-/* (El resto de tus estilos generales siguen intactos) */
+/* ===== ESTILOS GENERALES Y RESETEO ===== */
 * {
     margin: 0;
     padding: 0;
@@ -83,165 +9,219 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    /* Color de fondo oscuro principal */
+    background-color: #1e1e2f;
+    /* Color de texto claro */
     color: #f0f0f0;
     line-height: 1.6;
-    background-color: #1e1e2f;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    color: #e0e0e0;
-    width: 100%;
 }
 
+/* ===== ENCABEZADO / BANNER ===== */
 .banner {
-    background: linear-gradient(rgba(30, 30, 47, 0.7), rgba(30, 30, 47, 0.7)),
-                url('../img/banner.jpg') center/cover no-repeat;
-    color: #f0f0f0;
+    /* Mismo gradiente que el banner de contacto */
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
     text-align: center;
-    padding: 120px 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 80px 20px 60px; /* Más padding superior para impacto */
+    margin-bottom: 50px;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.banner > * {
+    position: relative;
+    z-index: 2; /* Para asegurar que el contenido esté sobre el pseudo-elemento */
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid #ffffff;
 }
 
 .banner h1 {
     font-size: 3rem;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 .banner p {
     font-size: 1.2rem;
-    margin: 10px 0 20px;
-}
-
-.btn {
-    background-color: #3b82f6;
-    color: white;
-    text-decoration: none;
-    padding: 15px 25px;
-    border-radius: 25px;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #2563eb;
+    margin-bottom: 30px;
+    opacity: 0.9;
 }
 
 .cta {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 16px;
-    margin-top: 10px;
-}
-
-.about {
-    margin: 50px auto;
-    text-align: center;
-    max-width: 1200px;
-    width: 100%;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 15px;
+    margin-top: 30px;
 }
 
-/* Links (botones) */
+/* Estilo del botón (similar a btn-enviar pero en el color principal azul) */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #10b981; /* Usamos el verde de acento */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.iconoadopta {
+    width: 35px;
+    height: 35px;
+}
+
+/* ===== CARRUSEL ===== */
+.carousel-container {
+    padding: 0 20px;
+    margin-bottom: 50px;
+    max-width: 1000px; /* Ancho máximo para el carrusel */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    background-color: #2a2a3d; /* Color de fondo de los contenedores de info */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+    display: none; /* Ocultar por defecto */
+}
+
+.slide.active {
+    display: block; /* Mostrar solo la activa */
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 400px; /* Altura máxima para las imágenes del carrusel */
+}
+
+/* ===== SECCIÓN ACERCA DE (ABOUT) ===== */
+.about {
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 50px;
+}
+
+.about h2 {
+    font-size: 2.2rem;
+    color: #3b82f6; /* Azul principal */
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.05rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: #cbd5e1;
+}
+
 .links {
     display: flex;
+    justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 24px; /* mayor separación por defecto */
-    margin-top: 20px;
-    text-align: center;
 }
 
-/* Responsive: apilar y espaciar links en pantallas pequeñas */
-@media (max-width: 600px) {
-    .links {
-        flex-direction: column;
-        gap: 18px; /* separación un poco mayor en móvil */
-        align-items: center;
-        padding: 0 10px;
-    }
-
-    .links .btn {
-        display: block;
-        width: 100%;
-        max-width: 360px;
-        padding: 12px 20px;
-        box-sizing: border-box;
-    }
-
-    /* Ajuste para el CTA (botón + icono) en móviles */
-    .cta {
-        flex-direction: row;
-        gap: 8px;
-    }
-
-    /* Icono un poco más pequeño en pantallas pequeñas */
-    .iconoadopta {
-        width: 32px;
-    }
+.links .btn {
+    /* Sobrescribir para usar el azul como color principal en esta sección */
+    background-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
+.links .btn:hover {
+    background-color: #2563eb;
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+/* ===== MISIÓN Y VISIÓN ===== */
 .mision-visioncontainer {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    padding: 60px 10%;
-    background-color: #1e1e35;
-    color: #f0f0f0;
-    align-items: stretch;
-    justify-content: center;
-    flex-wrap: nowrap; /* evitar apilar */
-    overflow-x: auto; /* si no caben, permitir desplazamiento horizontal */
-    -webkit-overflow-scrolling: touch;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
 }
 
-.mision, .vision {
+.mision,
+.vision {
+    /* Mismo estilo de contenedor oscuro que la info/formulario de contacto */
     background-color: #2a2a3d;
-    padding: 20px;
+    padding: 30px;
     border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 220px;
-    flex: 1 1 50%;
-    min-width: 180px; /* reducir ancho mínimo para permitir que queden lado a lado */
+    transition: transform 0.3s ease;
 }
 
-/* Movimiento suave al pasar el cursor sobre Misión y Visión */
-.mision, .vision {
-    transition: transform 0.28s ease, box-shadow 0.28s ease;
+.mision:hover,
+.vision:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
 }
 
-.mision:hover, .vision:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-    cursor: pointer;
+.mision h3,
+.vision h3 {
+    font-size: 1.5rem;
+    color: #10b981; /* Verde de acento */
+    margin-bottom: 15px;
 }
 
-.mision p, .vision p {
-    color: white !important;
+.mision p,
+.vision p {
+    color: #cbd5e1;
+    font-size: 1rem;
 }
 
-.mision h3, .vision h3 {
-    margin-bottom: 10px;
-    color: #3b82f6;
-}
-
+/* ===== FOOTER (Mismo estilo que stylecontacto.css) ===== */
 footer {
     display: flex;
     justify-content: center;
@@ -249,47 +229,125 @@ footer {
     background: #12121f;
     color: #c0c0c0;
     padding: 20px;
-    flex-wrap: wrap;
     text-align: center;
+    margin-top: 50px;
+    font-size: 0.9rem;
 }
 
-.logo {
-    width: 150px;
-    height: auto;
-    margin: 20px auto;
-    display: block;
-}
+/* ========================================= */
+/* ===== RESPONSIVE: TABLET (max-width: 768px) ===== */
+/* ========================================= */
+@media (max-width: 768px) {
+    .banner {
+        padding: 60px 15px 40px;
+    }
 
-.iconoadopta {
-    width: 40px;
-    height: auto;
-    margin: 0;
-    display: inline-block;
-    vertical-align: middle;
-}
+    .banner h1 {
+        font-size: 2.2rem;
+    }
 
-/* ===== RESPONSIVE: apilar Misión/Visión en móviles muy pequeños ===== */
-@media (max-width: 480px) {
+    .banner p {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .carousel-container {
+        padding: 0 15px;
+    }
+
     .mision-visioncontainer {
-        flex-direction: column;
-        gap: 16px;
-        padding: 20px;
-        overflow-x: visible; /* permitir que el contenedor se expanda verticalmente */
-        align-items: stretch;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px 40px;
     }
 
-    .mision, .vision {
-        min-width: auto;
-        width: 100%;
-        flex: 0 0 auto;
-        min-height: 160px;
-        padding: 16px;
+    .about {
+        padding: 30px 0;
     }
 
-    /* reducir el movimiento hover en móvil para evitar desprendimientos de layout */
-    .mision:hover, .vision:hover {
-        transform: none;
-        box-shadow: none;
+    .about h2 {
+        font-size: 1.8rem;
+    }
+
+    .mision,
+    .vision {
+        padding: 25px;
     }
 }
-  
+
+/* ========================================= */
+/* ===== RESPONSIVE: MÓVIL (max-width: 480px) ===== */
+/* ========================================= */
+@media (max-width: 480px) {
+    .banner {
+        padding: 50px 10px 30px;
+        margin-bottom: 30px;
+    }
+
+    .banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cta {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 80%;
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .iconoadopta {
+        display: none; /* Ocultar el icono en móvil */
+    }
+
+    .carousel-container {
+        padding: 0 10px;
+    }
+
+    .slide img {
+        max-height: 250px;
+    }
+
+    .about h2 {
+        font-size: 1.5rem;
+    }
+
+    .about p {
+        font-size: 0.95rem;
+    }
+
+    .links {
+        gap: 10px;
+    }
+
+    .mision-visioncontainer {
+        gap: 20px;
+        padding: 0 10px 30px;
+    }
+
+    .mision h3,
+    .vision h3 {
+        font-size: 1.3rem;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 0.8rem;
+    }
+}
