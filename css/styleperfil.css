@@ -1,0 +1,419 @@
+/* ===== ESTILOS GENERALES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1e1e2f;
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+/* ===== BANNER DEL PERFIL ===== */
+.banner-perfil {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.banner-perfil h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.banner-perfil p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* ===== CONTENEDOR PRINCIPAL DEL PERFIL ===== */
+.perfil-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+    align-items: start;
+}
+
+/* ===== IMAGEN DEL PERFIL ===== */
+.perfil-imagen {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.perfil-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.perfil-imagen:hover img {
+    transform: scale(1.05);
+}
+
+/* ===== INFORMACIÓN DEL PERFIL ===== */
+.perfil-info {
+    background-color: #2a2a3d;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.perfil-info h2 {
+    font-size: 2.2rem;
+    color: #3b82f6;
+    margin-bottom: 20px;
+}
+
+.perfil-info h3 {
+    font-size: 1.3rem;
+    color: #10b981;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.perfil-info p {
+    color: #cbd5e1;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* ===== DATOS DEL ANIMAL ===== */
+.dato {
+    background-color: rgba(59, 130, 246, 0.1);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border-left: 3px solid #3b82f6;
+    color: #e0e0e0;
+}
+
+/* ===== LISTAS ===== */
+.perfil-info ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.perfil-info li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #cbd5e1;
+}
+
+.perfil-info li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+}
+
+/* ===== ESTADOS ===== */
+.estado {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.estado.disponible {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.estado.adoptado {
+    background-color: #fce7f3;
+    color: #9f1239;
+}
+
+/* ===== BOTÓN SOLICITAR ADOPCIÓN ===== */
+.btn-adoptar {
+    display: inline-block;
+    background-color: #10b981;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-adoptar:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.btn-adoptar:active {
+    transform: translateY(0);
+}
+
+/* ===== SECCIÓN DE ANIMALES RELACIONADOS ===== */
+.relacionados {
+    background-color: #2a2a3d;
+    padding: 50px 20px;
+    margin-top: 60px;
+    border-top: 1px solid #3f3f5a;
+}
+
+.relacionados h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #3b82f6;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.relacionados-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.relacionados-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.relacionados-scroll::-webkit-scrollbar-track {
+    background: #1e1e2f;
+    border-radius: 10px;
+}
+
+.relacionados-scroll::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 10px;
+}
+
+.relacionados-scroll::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+}
+
+/* ===== MINI TARJETAS ===== */
+.mini-card {
+    flex: 0 0 150px;
+    background-color: #3f3f5a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.mini-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+.mini-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.mini-card:hover img {
+    transform: scale(1.1);
+}
+
+.mini-card p {
+    padding: 12px;
+    color: #e0e0e0;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #12121f;
+    color: #c0c0c0;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ===== RESPONSIVE: TABLET ===== */
+@media (max-width: 768px) {
+    .banner-perfil {
+        padding: 40px 15px;
+        margin-bottom: 30px;
+    }
+
+    .banner-perfil h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner-perfil p {
+        font-size: 1rem;
+    }
+
+    .perfil-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px 40px;
+    }
+
+    .perfil-info {
+        padding: 24px;
+    }
+
+    .perfil-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .perfil-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .relacionados {
+        padding: 40px 15px;
+    }
+
+    .relacionados h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .mini-card {
+        flex: 0 0 130px;
+    }
+
+    .mini-card img {
+        height: 100px;
+    }
+}
+
+/* ===== RESPONSIVE: MÓVIL ===== */
+@media (max-width: 480px) {
+    .banner-perfil {
+        padding: 30px 10px;
+        margin-bottom: 20px;
+    }
+
+    .banner-perfil h1 {
+        font-size: 1.4rem;
+    }
+
+    .banner-perfil p {
+        font-size: 0.9rem;
+    }
+
+    .perfil-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px 30px;
+    }
+
+    .perfil-info {
+        padding: 16px;
+    }
+
+    .perfil-info h2 {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+    }
+
+    .perfil-info h3 {
+        font-size: 1rem;
+        margin-top: 18px;
+    }
+
+    .dato {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    .perfil-info p {
+        font-size: 0.9rem;
+    }
+
+    .perfil-info li {
+        padding: 6px 0;
+        font-size: 0.9rem;
+    }
+
+    .btn-adoptar {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+        margin-top: 16px;
+    }
+
+    .relacionados {
+        padding: 30px 10px;
+    }
+
+    .relacionados h2 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .relacionados-scroll {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .mini-card {
+        flex: 0 0 110px;
+    }
+
+    .mini-card img {
+        height: 80px;
+    }
+
+    .mini-card p {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== ANIMACIÓN DE CARGA ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.perfil-container {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.relacionados-scroll {
+    animation: fadeIn 0.7s ease-in-out 0.2s backwards;
+}
